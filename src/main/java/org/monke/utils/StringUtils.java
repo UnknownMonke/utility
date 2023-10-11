@@ -8,6 +8,21 @@ import static org.monke.utils.Constants.*;
 
 public class StringUtils {
 
+    public static boolean isPalindrome(String input) {
+        int start = 0;
+        int end = input.length() - 1;
+
+        do {
+            if(input.charAt(start) != input.charAt(end)) {
+                return false;
+            }
+            ++start;
+            --end;
+        } while(start <= input.length() / 2 && end >= input.length() / 2);
+
+        return true;
+    }
+
     /**
      * Finds and return the longest word in a string.
      * If the word contains special characters, remove them and split the word.
@@ -95,8 +110,57 @@ public class StringUtils {
      *     </li>
      * </ul>
      */
+    public static String incrementAlphabetRaw(String input) {
+        if(input == null || input.isEmpty()) { throw new NoSuchElementException(); }
+
+        StringBuilder result = new StringBuilder();
+
+        for(char c : input.toCharArray()) {
+
+            if(isALetter(c)) {
+                String s = String.valueOf(c);
+                s = shiftLetterWithCase(s);
+                result.append(isVowel(s) ? s.toUpperCase() : s);
+            } else {
+                result.append(c);
+            }
+        }
+        return result.toString();
+    }
+
+    /**
+     * Returns a String :
+     * <ul>
+     *     <li>
+     *         Letters are shifted by 1 in the alphabet.
+     *     </li>
+     *     <li>
+     *         Numbers & special chars stays in place
+     *     </li>
+     *     <li>
+     *         UpperCase is kept, vowels are returned in upper case.
+     *     </li>
+     * </ul>
+     */
     public static String incrementAlphabet(String input) {
-        return ""; //TODO
+        if(input == null || input.isEmpty()) { throw new NoSuchElementException(); }
+
+        return streamString(input)
+                .map(s -> isALetter(s.charAt(0)) ? shiftLetterWithCase(s) : s)
+                .map(s -> isVowel(s) ? s.toUpperCase() : s)
+                .reduce("", (result,s) -> result + s);
+    }
+
+    /** Returns the next letter in the alphabet. Conserves the case. */
+    public static String shiftLetterWithCase(String letter) {
+        boolean upper = letter.toUpperCase().equals(letter);
+
+        int index = ALPHABET.indexOf(letter.toLowerCase()) + 1;
+        if(index > 25) index = 0; // z loops to a.
+
+        String result = String.valueOf(ALPHABET.charAt(index));
+
+        return upper ? result.toUpperCase() : result;
     }
 
     public static boolean containSpecialChars(String input) {
@@ -189,9 +253,17 @@ public class StringUtils {
         return !(letter == null || letter.isEmpty());
     }
 
-    /** Return the index of a given character inside a string. */
-    public static int findPosition(String input, String c) {
-        return 0; //TODO
+    public static boolean isVowel(String s) {
+        Scanner scanner = new Scanner(s);
+        String letter = scanner.findInLine("[" + VOWELS  + "]+");
+        scanner.close();
+
+        return !(letter == null || letter.isEmpty());
+    }
+
+    /** Clever method for removing characters. */
+    public static String removeWhitespace(String input) {
+        return String.join("", input.split(" "));
     }
 
     /** Returns a Stream of each character of a string, as a String. */
@@ -236,5 +308,52 @@ public class StringUtils {
             .stream()
             .filter(s -> !"".equals(s))
             .collect(Collectors.toList());
+    }
+
+    public static String findDuplicates(String input) {
+        Set<String> unique = streamString(input)
+                .collect(Collectors.toSet());
+
+        return streamString(input)
+                .map(s -> {
+                    if(unique.contains(s)) {
+                        unique.remove(s);
+                        return "";
+                    } else {
+                        return s;
+                    }
+                })
+                .reduce("", (r,s) -> r + s);
+    }
+
+    /**
+     * Returns whether 2 strings contain exactly the same letters.
+     * <br/>
+     * Uses an efficient frequency count method.
+     * @param s1 String containing only letters.
+     * @param s2 String containing only letters.
+     */
+    public static boolean isAnagramWord(String s1, String s2) {
+        return Arrays.equals(computeFrequencyWord(s1), computeFrequencyWord(s2));
+    }
+
+    public static Character[] computeFrequencyWord(String s) {
+        Character[] freq = new Character[26];
+        for(char c : s.toCharArray()) freq[ALPHABET.indexOf(c)] = c;
+        return freq;
+    }
+
+    /** Returns whether 2 strings contain exactly the same set of characters. */
+    public static boolean isAnagram(String s1, String s2) {
+        return computeFrequency(s1).equals(computeFrequency(s2));
+    }
+
+    public static Map<Integer, Integer> computeFrequency(String s) {
+        Map<Integer, Integer> freq = new HashMap<>();
+        for(int c : s.chars().toArray()) {
+            if(freq.containsKey(c)) freq.put(c, freq.get(c) + 1);
+            else freq.put(c, 1);
+        }
+        return freq;
     }
 }

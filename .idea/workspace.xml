@@ -6,13 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="3ee6c72e-bce2-40fe-947a-1e879caf7da4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doc.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/monke/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/monke/utils/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/monke/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/monke/binarytree/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/monke/StringUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/monke/utils/StringUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/monke/TimeZoneUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/monke/utils/TimeZoneUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/StringUtilsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/monke/utils/StringUtilsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TimeZoneUtilsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/monke/utils/TimeZoneUtilsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/General.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/General.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/monke/binarytree/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/monke/binarytree/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/monke/utils/StringUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/monke/utils/StringUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/monke/utils/StringUtilsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/monke/utils/StringUtilsTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,8 +82,21 @@
       <recent name="D:\projects\utils\docs\Java" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.StringUtilsTest.findLongestWord_test">
-    <configuration name="StringUtilsTest.findLongestWord_test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.monke.binarytree.Main" />
+      <module name="utils.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.monke.binarytree.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StringUtilsTest.findDuplicate_test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -99,7 +109,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;org.monke.utils.StringUtilsTest.findLongestWord_test&quot;" />
+            <option value="&quot;org.monke.utils.StringUtilsTest.findDuplicate_test&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -110,7 +120,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="StringUtilsTest.findSpecialChars_test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="StringUtilsTest.isAnagramWord_test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -123,7 +133,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;org.monke.utils.StringUtilsTest.findSpecialChars_test&quot;" />
+            <option value="&quot;org.monke.utils.StringUtilsTest.isAnagramWord_test&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -134,7 +144,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="StringUtilsTest.longestWord_test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="StringUtilsTest.isAnagram_test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -147,7 +157,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;org.monke.utils.StringUtilsTest.longestWord_test&quot;" />
+            <option value="&quot;org.monke.utils.StringUtilsTest.isAnagram_test&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -158,7 +168,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="StringUtilsTest.splitSpecialCharsRaw_test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="StringUtilsTest.isPalindrome_test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -171,31 +181,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;org.monke.utils.StringUtilsTest.splitSpecialCharsRaw_test&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="StringUtilsTest.splitSpecialChars_test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;org.monke.utils.StringUtilsTest.splitSpecialChars_test&quot;" />
+            <option value="&quot;org.monke.utils.StringUtilsTest.isPalindrome_test&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -208,11 +194,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.StringUtilsTest.findLongestWord_test" />
-        <item itemvalue="Gradle.StringUtilsTest.splitSpecialChars_test" />
-        <item itemvalue="Gradle.StringUtilsTest.findSpecialChars_test" />
-        <item itemvalue="Gradle.StringUtilsTest.longestWord_test" />
-        <item itemvalue="Gradle.StringUtilsTest.splitSpecialCharsRaw_test" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Gradle.StringUtilsTest.isAnagram_test" />
+        <item itemvalue="Gradle.StringUtilsTest.isAnagramWord_test" />
+        <item itemvalue="Gradle.StringUtilsTest.findDuplicate_test" />
+        <item itemvalue="Gradle.StringUtilsTest.isPalindrome_test" />
       </list>
     </recent_temporary>
   </component>
@@ -224,7 +210,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1696877154175</updated>
-      <workItem from="1696877155050" duration="35949000" />
+      <workItem from="1696877155050" duration="47965000" />
     </task>
     <servers />
   </component>

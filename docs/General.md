@@ -127,6 +127,22 @@ a is incremented, new value is returned.
 | Slower       | Faster           |
 
 
+### String manipulation
+
+String manipulation is important for several reasons :
+- Data cleaning (remove spaces, special chars...).
+- Parsing small parts of large datasets.
+- Formatting for communication b/w systems or user-friendly outputs.
+- Pattern matching for search.
+
+
+### Immutability
+
+- Enhances performances by reusing existing Objects.
+- Can lead to a drop in performances for large Objects as a new Object is created with each manipulation.
+- Contributes to safer code, Objects can be used as keys without fear of unexpected change.
+- Thread-safe.
+
 ### Miscellaneous
 
 - String class is final and immutable.
