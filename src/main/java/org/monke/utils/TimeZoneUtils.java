@@ -1,4 +1,4 @@
-package org.monke;
+package org.monke.utils;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
